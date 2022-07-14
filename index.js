@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs')
+let port =  process.env.PORT || 3001
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -47,7 +48,7 @@ app.get('/', (req, res)=> {
 
 
 
-app.listen(3001, ()=>{
+app.listen(port, ()=>{
     console.log('servidor rodando')
 })
 
