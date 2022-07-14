@@ -7,12 +7,12 @@ const fs = require('fs');
 const { query } = require('express');
 let port =  process.env.PORT || 3001
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+app.use((req, res, next)=>{
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
     app.use(cors());
     next();
-});
+})
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
